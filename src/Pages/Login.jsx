@@ -45,6 +45,8 @@ const Login = () => {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    
+    localStorage.setItem('userInfo' , JSON.stringify(user))
     console.log(user)
     if(user.emailVerified == false){
         toast.error('Email not verified', {
